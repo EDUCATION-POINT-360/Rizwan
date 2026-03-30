@@ -235,5 +235,32 @@
             mesh.style.background = `radial-gradient(circle at ${x}% ${y}%, #0e7490 0%, #010103 40%)`;
         });
     </script>
+    <script>
+  document.onkeydown = function(e) {
+    // Block F12
+    if(e.keyCode == 123) {
+      return false;
+    }
+    // Block Ctrl+Shift+I (Inspect)
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+      return false;
+    }
+    // Block Ctrl+Shift+J (Console)
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+      return false;
+    }
+    // Block Ctrl+U (View Source)
+    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+      return false;
+    }
+  };
+    </script>
+    <script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert("Right-click is disabled to protect our content.");
+  });
+    </script>
+    
 </body>
 </html>
