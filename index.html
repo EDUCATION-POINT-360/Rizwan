@@ -131,7 +131,44 @@
     --nav-height:64px;
 }
 
+brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
 
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.08em;
+
+    color: var(--white);
+
+    transition:
+        color .3s var(--ease),
+        transform .3s var(--ease),
+        opacity .3s var(--ease);
+}
+
+.brand span {
+    color: var(--cyan);
+}
+
+.brand:hover {
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+.brand:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 5px;
+    border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+    .brand {
+        font-size: 1.25rem;
+    }
+}
 /* =========================================================
    RESET
 ========================================================= */
